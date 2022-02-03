@@ -32,3 +32,9 @@ def insert_data(request):
         return render(request, 'listings/hello.html',  {'employees': employees})
     else:
         render(request, "listing/hello.html")
+
+def delete(request, emp_id):
+    employees = Employee.objects.all()
+    emp = Employee.objects.get(id=emp_id)    
+    emp.delete()
+    return render(request, 'listings/hello.html',  {'employees': employees})

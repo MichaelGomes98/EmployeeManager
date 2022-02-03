@@ -7,22 +7,34 @@
     </head>
     <body>     
 {% include 'listings/navbar.html' %}
-        <div style="margin-top: 2%"class="container">
-             <form class="row d-flex justify-content-center flex-nowrap" action="{% url 'insert_data' %}" method="post" >
-                 {% csrf_token %}
-                <div class="form-group" style="width: 20%" >
-                    <label>Nom</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="name" required>
+       <div style="margin-top: 2%"class="container">
+        <table class="table table-bordered table-dark">
+        <thead>
+            <tr>
+                <th scope="col" colspan="4" class="text-center">Ajout employé</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                <form class="row d-flex justify-content-center flex-nowrap" action="{% url 'insert_data' %}" method="post" >
+                    {% csrf_token %}
+                    <div class="form-group" >
+                        <label>Nom</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="name" required>
 
-                    <label>Prenom</label>
-                    <input type="text" class="form-control" name="surname" id="surname" placeholder="Prenom" required>
-            
-                    <label>Departement</label>
-                    <input type="text" class="form-control" name="departement" id="departement" placeholder="Departement" required>
+                        <label>Prenom</label>
+                        <input type="text" class="form-control" name="surname" id="surname" placeholder="Prenom" required>
+                
+                        <label>Departement</label>
+                        <input type="text" class="form-control" name="departement" id="departement" placeholder="Departement" required>
 
-                <button type="submit" class="btn btn-success" style="margin-top: 5%; width : 100%">Ajouter employé</button>
-                </div>
-            </form>
+                    <button type="submit" class="btn btn-success" style="margin-top: 5%; width : 100%">Ajouter employé</button>
+                    </div>
+                </form>
+            </td>
+
+            </tr>
     
             </div>
 
