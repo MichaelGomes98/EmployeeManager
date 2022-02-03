@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Liste des employés</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>     
+        <div style="margin-top: 2%"class="container">
+        <table class="table table-bordered table-dark">
+        <thead>
+            <tr>
+                <th scope="col" colspan="4" class="text-center">Liste des employés</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for emp in employees %}
+            <tr>
+                <td>{{ emp.name }} {{ emp.surname }} ({{emp.departement}})</td>
+                <td style="width: 20%" class="text-center">
+                        <button type="button" class="btn btn-danger" >Delete</button>
+                        <button type="button" class="btn btn-success">Update</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    
+        </div>
+
+
+
+        
+    
+    </body>
+</html>

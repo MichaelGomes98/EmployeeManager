@@ -4,13 +4,10 @@ from django.shortcuts import render
 from listings.models import Employee
 
 # Create your views here.
+#logique pour récupérer les données correctes de la base de données, et les injecter dans la page.
 def hello(request):
     employees = Employee.objects.all()
-    return HttpResponse(f"""<h1>Hello Django!</h1>
-            <p>Mes groupes préférés sont :<p>
-        <ul>
-            <li>{employees[0].name}</li>
-        </ul>""")
+    return render(request, 'listings/hello.html',  {'employees': employees})
 
 def about(request):
     return HttpResponse('<h1>À propos</h1> <p>TEST!</p>')
