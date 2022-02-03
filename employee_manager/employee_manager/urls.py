@@ -21,5 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', views.hello),
     path('about/', views.about),
-    path('listing/', views.liste)
+    path('addUser/', views.addUser),
+    path('updateUser/<int:emp_id>/', views.updateUser),
+    path('insert_data/', views.insert_data, name='insert_data'),
 ]

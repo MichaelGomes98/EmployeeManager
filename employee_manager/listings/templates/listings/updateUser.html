@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Liste des employés</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body> 
+        
+{% include 'listings/navbar.html' %}
+
+        <div style="margin-top: 2%"class="container">
+        <table class="table table-bordered table-dark">
+        <thead>
+            <tr>
+                <th scope="col" colspan="4" class="text-center">Modification employés</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                        <form>
+                            <div class="form-group" >
+                                <label>Nom</label>
+                                <input type="text" class="form-control" id="inputEmail4" value="{{ emp.name }}"  placeholder="Nom" required>
+                                <label>Prenom</label>
+                                <input type="text" class="form-control" id="inputPassword4" placeholder="Prenom"  value="{{ emp.surname }}"required>
+                        
+                                <label for="inputState">Departement</label>
+                                <input type="text" class="form-control" id="inputPassword4" placeholder="Departement"  value="{{ emp.departement }}"required>
+                            <button type="submit" class="btn btn-success" style="margin-top: 5%; width : 100%">Enregistrer</button>
+                            </div>
+                        </form>
+                </td>
+
+            </tr>
+
+        </tbody>
+        </table>
+        </div>
+
+    
+    </body>
+</html>
