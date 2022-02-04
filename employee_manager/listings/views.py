@@ -38,3 +38,13 @@ def delete(request, emp_id):
     emp = Employee.objects.get(id=emp_id)    
     emp.delete()
     return render(request, 'listings/hello.html',  {'employees': employees})
+
+def update_data(request, emp_id):
+    employees = Employee.objects.all()
+    emp = Employee.objects.filter(id=emp_id) 
+    if request.method == 'POST' :
+        name = request.POST['name']
+        surname = request.POST['surname']
+        departement = request.POST['departement']
+        emp.update(name=name, surname=surname,departement=departement)   
+        return render(request, 'listings/hello.html',  {'employees': employees})

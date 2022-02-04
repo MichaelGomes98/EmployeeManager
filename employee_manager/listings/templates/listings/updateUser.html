@@ -19,15 +19,16 @@
         <tbody>
             <tr>
                 <td>
-                        <form>
+                        <form action="{% url 'update_data' emp.id %}" method="post">
+                            {% csrf_token %}
                             <div class="form-group" >
                                 <label>Nom</label>
-                                <input type="text" class="form-control" id="inputEmail4" value="{{ emp.name }}"  placeholder="Nom" required>
+                                <input type="text" class="form-control" id="inputEmail4" value="{{ emp.name }}"  name="name" placeholder="Nom" required>
                                 <label>Prenom</label>
-                                <input type="text" class="form-control" id="inputPassword4" placeholder="Prenom"  value="{{ emp.surname }}"required>
+                                <input type="text" class="form-control" id="inputPassword4" placeholder="Prenom"  name="surname" value="{{ emp.surname }}"required>
                         
                                 <label for="inputState">Departement</label>
-                                <input type="text" class="form-control" id="inputPassword4" placeholder="Departement"  value="{{ emp.departement }}"required>
+                                <input type="text" class="form-control" id="inputPassword4" placeholder="Departement" name="departement" value="{{ emp.departement }}"required>
                             <button type="submit" class="btn btn-success" style="margin-top: 5%; width : 100%">Enregistrer</button>
                             </div>
                         </form>
